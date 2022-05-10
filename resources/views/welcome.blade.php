@@ -126,6 +126,19 @@
                         Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
                     </div>
                 </div>
+<hr>
+<div class="links">
+   <strong>Database Connected: </strong>
+    @php
+        try {
+            DB::connection()->getPDO();
+            echo DB::connection()->getDatabaseName();
+            } catch (\Exception $e) {
+            echo 'None';
+        }
+    @endphp
+</div>
+
             </div>
         </div>
     </body>
